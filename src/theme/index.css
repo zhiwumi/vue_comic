@@ -1,0 +1,136 @@
+
+/* 走马灯 */
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 200px;
+  margin: 0;
+}
+.el-carousel__item{
+  background-color: transparent;
+}
+
+/* 分类导航 */
+.sortNav{
+  /* position:absolute; */
+  /* left: 15%; */
+  margin: 0 auto;
+  width: 1184px;
+  height: 20px;
+  line-height: 20px;
+  padding-top: 10px;
+}
+.sortNav li{
+  margin-left: 40px;
+  float: left;
+  font-size: 14px;
+}
+/* 漫画展示1 */
+.comShow1{
+  /* position: relative; */
+  width: 1216px;
+  margin: 0 auto;
+  margin-top: 30px;
+  /* background-color: aqua; */
+}
+.intr{
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+/* background-color: black; */
+}
+.intr a:hover{
+color: #000;
+  
+}
+.intr span{
+  margin-right: 30px;
+  font-size: 14px;
+}
+.intr li{
+  float: left;
+  margin-right: 30px;
+  font-size: 14px;
+}
+.intr span:nth-child(1){
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 30px;
+  color: black;
+}
+/* 具体漫画 */
+.spe1{
+  /* position: absolute; */
+  width: 1216px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  /* background-color: chocolate; */
+  /* overflow: hidden; */
+}
+.spe1 div{
+  /* position: absolute; */
+  float: left;
+  height: 300px;
+  padding-right: 18px;
+  /* background-color: palegoldenrod; */
+  
+}
+.spe1 .fixedTitle{
+  /* background-color: black; */
+  padding: 0;
+  position: relative;
+}
+.spe1 div img{
+  width: 184px;
+  height: 244px;
+}
+.spe1 .title{
+  top:250px;
+  left: 7px;
+  position: absolute;
+  color: black;
+  height: 25px;
+  font-size: 15px;
+}
+/* 每日更新 */
+.update{
+  width: 1216px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.spe2{
+  position: absolute;
+  width: 1216px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+  /* background-color: chocolate; */
+}
+.spe2 div{
+  /* position: absolute; */
+  float: left;
+  height:168px;
+  /* background-color: palegoldenrod; */
+}
+.spe2 .fixedTitle{
+  /* background-color: black; */
+  position: relative;
+}
+.spe2 div img{
+  /* position: absolute; */
+  width: 224px;
+  height: 140px;
+  margin-right: 18px;
+}
+.spe2 .title{
+  /* margin: 10px; */
+  top:140px;
+  position: absolute;
+  color: black;
+  height: 25px;
+  font-size: 15px;
+}

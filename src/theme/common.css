@@ -1,0 +1,35 @@
+.header{
+  position: relative;
+  height: 60px;
+  background-color: black;
+  min-width:1200px;
+  width: 100%;
+}
+/* 导航 */
+.nav{
+  position:absolute;
+  left: 15%;
+  /* width: 1184px; */
+  min-width:1200px;
+  height: 60px;
+  /* 让盒子行高和头部一样，实现居中 */
+line-height: 60px;
+}
+.nav li{
+  margin-left: 40px;
+  float: left;
+  font-size: 14px;
+}
+.el-input__inner{
+  height: 30px;
+  border-radius: 30px;
+  border: 0;
+}
+i{
+  margin: 4px;
+}
+/* 尾部 */
+.footer{
+  height: 320px;
+  background-color: rgb(40, 40, 40);
+}
