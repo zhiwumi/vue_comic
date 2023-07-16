@@ -1,0 +1,43 @@
+p{
+  width: 1200px;
+  color: black;
+  font-size: 14px;
+  padding: 30px 0;
+}
+.searchShow{
+  width: 1216px;
+  margin: 0 auto;
+  /* background-color: aqua; */
+}
+.spe{
+  width: 1216px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  /* background-color: aqua;  */
+}
+.spe div{
+  /* position: absolute; */
+  float: left;
+  height: 300px;
+  padding-right: 18px;
+  /* background-color: palegoldenrod; */
+  
+}
+.spe .fixedTitle{
+  /* background-color: black; */
+  padding: 0;
+  position: relative;
+}
+.spe div img{
+  width: 184px;
+  height: 244px;
+}
+.spe .title{
+  top:250px;
+  left: 7px;
+  position: absolute;
+  color: black;
+  height: 25px;
+  font-size: 15px;
+}

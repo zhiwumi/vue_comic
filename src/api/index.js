@@ -1,4 +1,5 @@
 import request from '../utils/request.js'
+
 // 轮播图
 export function getBannerImg () {
   return request({
@@ -6,6 +7,7 @@ export function getBannerImg () {
     method: 'get'
   })
 }
+
 // 原创
 export function getOriginal () {
   return request({
@@ -13,10 +15,26 @@ export function getOriginal () {
     method: 'get'
   })
 }
+
 // 每日更新
-export function getDailyUpdate () {
+export function getDailyUpdate (pos) {
   return request({
-    url: '/api/v2/pweb/daily/topics?pos=2',
-    method: 'get'
+    url: '/api/v2/pweb/daily/topics',
+    method: 'get',
+    params: {
+      pos
+    }
+  })
+}
+
+// 搜索结果
+
+export function getResult (q) {
+  return request({
+    url: '/api/v1/search/topic',
+    method: 'get',
+    params: {
+      q
+    }
   })
 }

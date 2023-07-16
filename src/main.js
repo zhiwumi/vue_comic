@@ -7,6 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './theme/base.css'
 import './theme/common.css'
 import './theme/index.css'
+import './theme/search.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

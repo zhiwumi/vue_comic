@@ -32,6 +32,27 @@
 
 export default {
   name: 'ComHeader',
+  data () {
+    return {
+      search: ''
+    }
+  },
+  methods: {
+    searchHandler () {
+      if (this.search === '') {
+        this.$message({
+          message: '请输入内容',
+          type: 'warning'
+        })
+      } else {
+        // 报错显示是路由重复，vue-router 实例上的 push 方法返回的是 promise 对象，所以传入的参数期望有一个成功和失败的回调，如果省略不写则会报错。
+        // size为数量，默认为10，可改
+        this.$router.push('/search?q=' + this.search, () => {}, () => {})
+        // 刷新页面，更新数据，待解决
+        window.location.reload()
+      }
+    }
+  },
   components: {
   }
 }

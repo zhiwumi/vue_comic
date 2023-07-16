@@ -12,7 +12,7 @@
 <!-- 分类导航 -->
 <div class="sortNav">
   <ul>
-    <li v-for="item in homeCate.slice(0,14)" :key="item"><a href="">{{item.title}}</a></li>
+    <li v-for="(item,index) in homeCate.slice(0,14)" :key="index"><a href="">{{item.title}}</a></li>
   </ul>
 </div>
   </div>
@@ -40,7 +40,7 @@
 <!-- 介绍 -->
 <div class="intr">
 <span>每日更新</span>
-<li v-for="item in arr1" :key="item"><a href="" >{{item}}</a></li>
+<li v-for="(item,index) in arr" :key="index"><a href="" @click.prevent="getDailyUpdate(item)">{{item|getDate}}</a></li>
 </div>
 <!-- 具体漫画 -->
 <div class="spe2">
@@ -69,8 +69,8 @@ export default {
       original: [],
       // 每日更新日期获取
       date: new Date(),
-      arr: [],
-      arr1: []
+      arr: []
+      // arr1: []
     }
   },
   created () {
@@ -78,26 +78,26 @@ export default {
     this.getDailyUpdate()
     this.getOriginal()
     this.getarr()
-    this.getDate()
+    // this.getDate()
   },
   methods: {
     async getBannerImg () {
-      await getBannerImg({})
+      await getBannerImg()
         .then(res => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.banners = res.data.data.popularity_topics
           this.homeCate = res.data.data.categories
         })
     },
-    async getDailyUpdate () {
-      await getDailyUpdate({})
+    async getDailyUpdate (item) {
+      await getDailyUpdate(item)
         .then(res => {
           // console.log(res.data.data.topics[0])
           this.daily = res.data.data.topics
         })
     },
     async getOriginal () {
-      await getOriginal({})
+      await getOriginal()
         .then(res => {
           // console.log(res.data.data.topics)
           this.original = res.data.data.topics
@@ -111,17 +111,24 @@ export default {
           this.arr[i] = this.date.getDay() - i + 7
         }
       }
-    },
-    async getDate () {
-      // 显示周是0-6
-      const arrDate = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
-      for (let i = 0; i <= 6; i++) {
-        this.arr1[i] = arrDate[this.arr[i]]
-      }
-      this.arr1[0] = '今天'
-      this.arr1[1] = '昨天'
-      console.log(this.arr1)
     }
+    // async getDate () {
+    //   // 显示周是0-6
+    //   const arrDate = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+    //   for (let i = 0; i <= 6; i++) {
+    //     this.arr1[i] = arrDate[this.arr[i]]
+    //   }
+    //   this.arr1[0] = '今天'
+    //   this.arr1[1] = '昨天'
+    //   console.log(this.arr1)
+    // }
+  },
+  filters: {
+    getDate (val) {
+      const arrDate = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+      return arrDate[val]
+    }
+
   }
 }
 </script>
