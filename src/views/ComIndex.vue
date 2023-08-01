@@ -5,7 +5,7 @@
     <div style="min-width: 1200px;">
       <el-carousel :interval="4000" type="card" height="400px">
     <el-carousel-item v-for="(item,index) in banners" :key="index">
-    <img :src="item.cover_image_url" alt="">
+    <img :src="item.cover_image_url" alt=""  @click="gotoDetail(item.id)">
     </el-carousel-item>
   </el-carousel>
 </div>
@@ -28,7 +28,7 @@
 <div class="spe1">
   <!-- 只取6条数据 -->
   <div class="fixedTitle" v-for="(item,index) in original.slice(0, 6)" :key="index">
-    <a href="" >
+    <a  @click="gotoDetail(item.id)" >
     <div><img :src="item.vertical_image_url" alt=""></div>
     <div class="title">{{ item.title }}</div>
   </a>
@@ -46,7 +46,7 @@
 <div class="spe2">
   <!-- 只取10条数据 -->
   <div class="fixedTitle" v-for="(item,index) in daily.slice(0, 10)" :key="index">
-    <a href="" >
+    <a  @click="gotoDetail(item.id)" >
     <div><img :src="item.cover_image_url" alt=""></div>
     <div class="title">{{ item.title }}</div>
   </a>
@@ -111,7 +111,7 @@ export default {
           this.arr[i] = this.date.getDay() - i + 7
         }
       }
-    }
+    },
     // async getDate () {
     //   // 显示周是0-6
     //   const arrDate = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
@@ -122,6 +122,14 @@ export default {
     //   this.arr1[1] = '昨天'
     //   console.log(this.arr1)
     // }
+    gotoDetail (id) {
+      this.$router.push({
+        path: '/detail',
+        query: {
+          id
+        }
+      })
+    }
   },
   filters: {
     getDate (val) {

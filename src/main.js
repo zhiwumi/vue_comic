@@ -8,6 +8,7 @@ import './theme/base.css'
 import './theme/common.css'
 import './theme/index.css'
 import './theme/search.css'
+import './theme/detail.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

@@ -28,13 +28,25 @@ export function getDailyUpdate (pos) {
 }
 
 // 搜索结果
-
 export function getResult (q) {
   return request({
     url: '/api/v1/search/topic',
     method: 'get',
     params: {
       q
+    }
+  })
+}
+
+// 漫画详情
+export function getDetail (id) {
+  return request({
+    // 此处请求的样式
+    // http://localhost:8080/api/v2/pweb/topic/13497?id=13497
+    url: '/api/v2/pweb/topic/' + id,
+    method: 'get',
+    params: {
+      id
     }
   })
 }

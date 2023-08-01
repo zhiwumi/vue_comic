@@ -38,7 +38,8 @@ a {
 }
 
 a:hover {
-  color: #fff
+  color: #fff;
+  cursor: pointer
 }
 
 button,

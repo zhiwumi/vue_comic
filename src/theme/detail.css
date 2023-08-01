@@ -1,0 +1,126 @@
+.topicHeader{
+width: 1216px;
+margin: 0 auto;
+margin-top: 20px;
+padding: 20px;
+border: 1px solid #ccc;
+}
+.topicHeader .box{
+  width: 1184px;
+  margin: 0 auto;
+}
+.topicHeader img{
+  width: 358px;
+  height: 223px;
+}
+.topicHeader .right{
+  width: 800px;
+  /* background-color: black; */
+  float: right;
+}
+.topicHeader .author{
+  font-size: 14px;
+  margin-top: 6px;
+}
+.topicHeader .share{
+  margin-top: 24px;
+}
+.el-icon-star-off{
+  font-size: 16px;
+}
+.topicHeader span{
+margin-right: 18px;
+}
+.topicHeader .more{
+  font-size: 14px;
+  margin-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+text-overflow: ellipsis;
+width: 800px;
+}
+.topicHeader .btn{
+  margin-top: 25px;
+}
+.chapter{
+  /* 清除浮动 */
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 1216px;
+  /* background-color: black; */
+border: 1px solid #ccc;
+}
+.Chalist{
+  margin-left: 20px;
+
+  margin-top: 20px;
+  font-size: 14px;
+}
+.Chalist span{
+  float: left;
+  font-size: 16px;
+line-height: 14px;
+color: black;
+}
+.chapter li{
+  float: left;
+  font-size: 14px;
+  line-height: 14px;
+  /* margin-left:25px; */
+}
+.chapter li:nth-child(1){
+  margin-left: 20px;
+}
+.chapter li:nth-child(even){
+  background: #eee;
+    height: 10px;
+    margin: 0 5px;
+    width: 2px;
+}
+.chapter .ChaBtn{
+  overflow: hidden;
+  width: 1216px;
+  margin-left: 20px;
+  margin-top: 60px;
+  /* background-color: bisque; */
+}
+.ChaBtn .el-button{
+  margin-right: 14px;
+  color:black;
+  font-size: 13px;
+}
+.detail{
+  /* background-color: black; */
+  overflow: hidden;
+  width: 1216px;
+  padding: 20px;
+}
+.par{
+  float: left;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  /*1. 先强制一行内显示文本*/
+ white-space: nowrap;
+ /*2. 超出的部分隐藏*/
+ overflow: hidden;
+ /*3. 文字用省略号替代超出的部分*/
+ text-overflow: ellipsis;
+}
+.par span{
+  color: black;
+  width: 178px;
+  height: 50px;
+  font-size: 13px;
+  line-height: 50px;
+  margin-left: 10px;
+  /* background-color: black; */
+}

@@ -9,7 +9,7 @@
 <div class="spe">
   <!-- 只取6条数据 -->
   <div class="fixedTitle" v-for="(item,index) in result" :key="index">
-    <a href="" >
+    <a @click="gotoDetail(item.id)">
     <div><img :src="item.vertical_image_url" alt=""></div>
     <div class="title">{{ item.title }}</div>
   </a>
@@ -36,10 +36,18 @@ export default {
       await getResult(this.$route.query.q)
         .then(res => {
           // console.log(q)
-          console.log(this.$route.query.q)
-          console.log(res.data.data.hit)
+          // console.log(this.$route.query.q)
+          // console.log(res.data.data.hit)
           this.result = res.data.data.hit
         })
+    },
+    gotoDetail (id) {
+      this.$router.push({
+        path: '/detail',
+        query: {
+          id
+        }
+      })
     }
   }
 }
