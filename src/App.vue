@@ -2,7 +2,8 @@
   <div id="app">
     <ComHeader></ComHeader>
   <router-view></router-view>
-  <ComFooter></ComFooter>
+  <!-- 根据路由元判断底部是否展示 -->
+  <ComFooter v-show="$route.meta.show"></ComFooter>
   </div>
 
 </template>

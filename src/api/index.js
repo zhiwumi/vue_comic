@@ -45,8 +45,22 @@ export function getDetail (id) {
     // http://localhost:8080/api/v2/pweb/topic/13497?id=13497
     url: '/api/v2/pweb/topic/' + id,
     method: 'get',
-    params: {
+    // 此处不用params请求样式上面?后没有
+    query: {
       id
+    }
+  })
+}
+
+// 分类
+export function getClass (id, sort, status) {
+  return request({
+    url: '/api/search/mini/topic/multi_filter?size=12&tag_id=' + id + '&sort=' + sort + '&update_status=' + status,
+    method: 'get',
+    params: {
+      id,
+      sort,
+      status
     }
   })
 }

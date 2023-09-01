@@ -40,7 +40,7 @@
 <!-- 介绍 -->
 <div class="intr">
 <span>每日更新</span>
-<li v-for="(item,index) in arr" :key="index"><a href="" @click.prevent="getDailyUpdate(item)">{{item|getDate}}</a></li>
+<li v-for="(item,index) in arr" :key="index"  @click="btn(index)"><a :class="{active:one===index}" href="" @click.prevent="getDailyUpdate(item)">{{item|getDate}}</a></li>
 </div>
 <!-- 具体漫画 -->
 <div class="spe2">
@@ -69,8 +69,9 @@ export default {
       original: [],
       // 每日更新日期获取
       date: new Date(),
-      arr: []
-      // arr1: []
+      arr: [],
+      // 每日更新默认第一个高亮
+      one: 0
     }
   },
   created () {
@@ -78,13 +79,21 @@ export default {
     this.getDailyUpdate()
     this.getOriginal()
     this.getarr()
+    // console.log(this.arr[0])
     // this.getDate()
   },
+  mounted () {
+    // 显示今天的更新内容,挂载到这因为arr获取到已经
+    this.getDailyUpdate(this.arr[0])
+  },
   methods: {
+    btn (index) {
+      this.one = index
+    },
     async getBannerImg () {
       await getBannerImg()
         .then(res => {
-          // console.log(res.data.data)
+          console.log(res.data.data.categories)
           this.banners = res.data.data.popularity_topics
           this.homeCate = res.data.data.categories
         })
@@ -142,5 +151,10 @@ export default {
 </script>
 
 <style>
+.intr .active {
+  color: #f5a623;
+  /* 原样式为红色 */
+  background: none !important
+}
 
 </style>

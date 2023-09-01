@@ -4,7 +4,7 @@
     <div class="nav">
   <ul>
   <li><a href="">首页</a></li>
-  <li><a href="" >分类<i class="el-icon-caret-bottom"></i></a></li>
+  <li><a @click="gotoClass()">分类<i class="el-icon-caret-bottom"></i></a></li>
   <li><a href="">漫剧</a></li>
   <li><a href="">世界</a></li>
   <li><a href="">投稿</a></li>
@@ -38,6 +38,17 @@ export default {
     }
   },
   methods: {
+    gotoClass () {
+      this.$router.resolve({
+        path: '/class',
+        query: {
+          cateid1: 0,
+          cateid2: 0,
+          cateid3: 1
+        }
+      })
+      window.open('http://localhost:8080/#/class?cateid1=0&cateid2=0&cateid3=1', '_blank')
+    },
     searchHandler () {
       if (this.search === '') {
         this.$message({
@@ -46,9 +57,10 @@ export default {
         })
       } else {
         // 报错显示是路由重复，vue-router 实例上的 push 方法返回的是 promise 对象，所以传入的参数期望有一个成功和失败的回调，如果省略不写则会报错。
+        // 此处在路由index文件也写了相应解决方法,可解决全部
         // size为数量，默认为10，可改
         this.$router.push('/search?q=' + this.search, () => {}, () => {})
-        // 刷新页面，更新数据，待解决
+        // 刷新页面，更新数据
         window.location.reload()
       }
     }

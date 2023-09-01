@@ -1,0 +1,43 @@
+.classTop{
+  margin: 0 auto;
+  width: 1184px;
+  padding: 20px 0 20px;
+  /* background-color: black; */
+  font-size: 12px;
+  color: #333;
+}
+.hid{
+ overflow: hidden;
+ margin-bottom: 12px;
+}
+.classTop .tit{
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    /* background-color: pink; */
+    margin-right: 32px;
+}
+.classTop ul{
+  float: left;
+  height: 26px;
+  line-height: 26px;
+}
+.classTop ul li{
+  float: left;
+  margin-right: 22px;
+  padding: 0 8px;
+}
+.classTop a{
+  color: black;
+  float: left;
+  margin-bottom: 7px;
+    margin-right: 22px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 8px;
+}
+.classBottom{
+  margin: 0 auto;
+  width: 1184px;
+  border-color: black;
+}

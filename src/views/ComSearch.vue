@@ -7,7 +7,6 @@
  </p>
  <!-- 具体漫画 -->
 <div class="spe">
-  <!-- 只取6条数据 -->
   <div class="fixedTitle" v-for="(item,index) in result" :key="index">
     <a @click="gotoDetail(item.id)">
     <div><img :src="item.vertical_image_url" alt=""></div>
